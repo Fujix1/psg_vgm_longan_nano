@@ -47,7 +47,7 @@ boolean sd_init() {
   DIR dir;
   FILINFO fno;
 
-  currentDir = 5;
+  currentDir = 0;
   currentFile = 0;
 
   // SD マウントするまで試行
