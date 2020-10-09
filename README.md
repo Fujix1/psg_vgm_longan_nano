@@ -37,7 +37,22 @@ VGM files have to be stored in a directory in the root. Any files in the root or
 <img width="600" alt="pins" src="https://user-images.githubusercontent.com/13434151/91421188-93c02800-e890-11ea-9517-12cd35cec64a.png">
 Longan Nano って初めから SD カードと液晶が搭載されてコンパクトにまとまっています。これらを利用する場合、デフォルトで上図のピンが使われます。また、今回は I2C でクロックを設定するのでそれも必要です。
 
-【2020/09/17 追加】液晶用の MISO0 である PA6 ピンは液晶初期化時に確保はされますが、実際には使われていない模様。そのため、``Lcd_Init();`` 後に PA6 を出力に設定すれば普通に使えます。うちではいまのところ問題はおきていません。 
+**液晶で使っているピンの内訳**
+PA5 - SCK0 = SPI0 クロック
+PA6 - MISO0 = SPI0 データ入力（未使用）
+PA7 - MOSI0 = SPI0 データ出力
+PB0 - TFT_RS = LCD のリセットコマンド（GPIO）
+PB1 - TFT_DC = LCD の Write コマンド（GPIO）
+PB2 - CS0 = SPI0 の CS（GPIO）
+
+液晶用の MISO0 である PA6 ピンは液晶初期化時に確保はされますが、実際には使われていない模様。そのため、``Lcd_Init();`` 後に PA6 を出力に設定すれば普通に使えます。うちではいまのところ問題はおきていません。PB2 は液晶コネクタにだけつながっている模様。
+
+**SD カードで使っているピンの内訳**
+PB15 - SPI1 MOSI
+PB14 - SPI1 MISO
+PB13 - SPI1 SCLK
+PB12 - SPI1 CS_TF
+
 
 Longan Nano is equipped with a micro SD card reader/writer and a color LCD, that use some pins for I2S communications. In this example, I use I2C to setup the clock generator, two additonal pins are necessary.
 
