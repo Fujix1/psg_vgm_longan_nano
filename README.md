@@ -37,7 +37,9 @@ VGM files have to be stored in a directory in the root. Any files in the root or
 <img width="600" alt="pins" src="https://user-images.githubusercontent.com/13434151/91421188-93c02800-e890-11ea-9517-12cd35cec64a.png">
 Longan Nano って初めから SD カードと液晶が搭載されてコンパクトにまとまっています。これらを利用する場合、デフォルトで上図のピンが使われます。また、今回は I2C でクロックを設定するのでそれも必要です。
 
-**液晶で使っているピンの内訳**
+<br>
+
+#### 液晶で使っているピンの内訳
 
 * PA5 - SCK0 = SPI0 クロック
 * PA6 - MISO0 = SPI0 データ入力（未使用）
@@ -49,7 +51,7 @@ Longan Nano って初めから SD カードと液晶が搭載されてコンパ�
 液晶用の MISO0 である PA6 ピンは液晶初期化時に確保はされますが、実際には使われていない模様。そのため、``Lcd_Init();`` 後に PA6 を出力に設定すれば普通に使えます。うちではいまのところ問題はおきていません。PB2 は液晶コネクタにだけつながっている模様。
 
 
-**SD カードで使っているピンの内訳**
+#### SD カードで使っているピンの内訳**
 
 * PB15 - SPI1 MOSI
 * PB14 - SPI1 MISO
