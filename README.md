@@ -59,7 +59,7 @@ Longan Nano って初めから SD カードと液晶が搭載されてコンパ�
 * PB12 - SPI1 CS_TF
 
 
-Longan Nano is equipped with a micro SD card reader/writer and a color LCD, that use some pins for I2S communications. In this example, I use I2C to setup the clock generator, two additonal pins are necessary.
+Longan Nano is equipped with a micro SD card reader/writer and a LCD, that use some of GIPO pins for I2S communications and other purposes. In this example, I use I2C to setup the clock generator, two additonal pins are necessary.
 
 
 ## 【困った問題1】Arduino ライブラリが未完成！
